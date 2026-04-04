@@ -21,8 +21,8 @@ public class TaskController {
 	}
 
 	@PostMapping
-	public Task store(@Valid @RequestBody Task task) {
-		return taskService.save(task);
+	public Task store(@Valid @RequestBody CreateTaskRequest request) {
+		return taskService.save(new Task(request.getTitle()));
 	}
 
 	@PutMapping("/{id}")
