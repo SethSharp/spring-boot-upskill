@@ -1,6 +1,7 @@
 package com.sethsharp.spring_boot_upskill.entity;
 
 import jakarta.persistence.*;
+import com.sethsharp.spring_boot_upskill.entity.User;
 
 @Entity
 @Table(name = "tasks")
@@ -10,13 +11,18 @@ public class Task {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
+
 	private String title;
 
 	private boolean completed;
 
 	public Task() {}
 
-	public Task(String title) {
+	public Task(User user, String title) {
+		this.user = user;
 		this.title = title;
 		this.completed = false;
 	}
@@ -26,4 +32,8 @@ public class Task {
 	public boolean isCompleted() { return completed; }
 	public void setTitle(String title) { this.title = title; }
 	public void setCompleted(boolean completed) { this.completed = completed; }
+
+	// relation getters / setters
+	public User getUser() { return user; }
+	public void setUser(User user) { this.user = user; }
 }
