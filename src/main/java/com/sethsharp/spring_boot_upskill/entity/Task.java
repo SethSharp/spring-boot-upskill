@@ -1,4 +1,4 @@
-package com.sethsharp.spring_boot_upskill;
+package com.sethsharp.spring_boot_upskill.entity;
 
 import jakarta.persistence.*;
 

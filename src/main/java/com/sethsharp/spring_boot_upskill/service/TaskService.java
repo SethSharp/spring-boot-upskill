@@ -1,7 +1,9 @@
-package com.sethsharp.spring_boot_upskill;
+package com.sethsharp.spring_boot_upskill.service;
 
 import org.springframework.stereotype.Service;
 import java.util.List;
+import com.sethsharp.spring_boot_upskill.entity.Task;
+import com.sethsharp.spring_boot_upskill.repository.TaskRepository;
 
 @Service
 public class TaskService {

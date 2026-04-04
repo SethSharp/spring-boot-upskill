@@ -1,4 +1,4 @@
-package com.sethsharp.spring_boot_upskill;
+package com.sethsharp.spring_boot_upskill.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

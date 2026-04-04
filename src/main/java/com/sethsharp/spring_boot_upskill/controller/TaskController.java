@@ -1,9 +1,12 @@
-package com.sethsharp.spring_boot_upskill;
+package com.sethsharp.spring_boot_upskill.controller;
 
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.ArrayList;
 import jakarta.validation.Valid;
+import com.sethsharp.spring_boot_upskill.dto.CreateTaskRequest;
+import com.sethsharp.spring_boot_upskill.entity.Task;
+import com.sethsharp.spring_boot_upskill.service.TaskService;
 
 @RestController
 @RequestMapping("/api/tasks")
