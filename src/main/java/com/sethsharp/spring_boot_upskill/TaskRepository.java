@@ -1,0 +1,7 @@
+package com.sethsharp.spring_boot_upskill;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TaskRepository extends JpaRepository<Task, Long> {
+	
+}
