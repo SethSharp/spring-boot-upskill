@@ -3,6 +3,7 @@ package com.sethsharp.spring_boot_upskill;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.ArrayList;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/tasks")
