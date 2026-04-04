@@ -32,4 +32,8 @@ public class Task {
 	public boolean isCompleted() { return completed; }
 	public void setTitle(String title) { this.title = title; }
 	public void setCompleted(boolean completed) { this.completed = completed; }
+
+	// relation getters / setters
+	public User getUser() { return user; }
+	public void setUser(User user) { this.user = user; }
 }
