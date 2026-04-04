@@ -3,22 +3,30 @@ package com.sethsharp.spring_boot_upskill.service;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import com.sethsharp.spring_boot_upskill.entity.Task;
+import com.sethsharp.spring_boot_upskill.entity.User;
 import com.sethsharp.spring_boot_upskill.repository.TaskRepository;
+import com.sethsharp.spring_boot_upskill.repository.UserRepository;
 
 @Service
 public class TaskService {
 
 	private final TaskRepository taskRepository;
+	private final UserRepository userRepository;
 
-	public TaskService(TaskRepository taskRepository) {
+	public TaskService(TaskRepository taskRepository, UserRepository userRepository) {
 		this.taskRepository = taskRepository;
+		this.userRepository = userRepository;
 	}
 
 	public List<Task> findAll() {
 		return taskRepository.findAll();
 	}
 
-	public Task save(Task task) {
+	public Task save(Long id, String title) {
+		User user = userRepository.findById(id)
+			.orElseThrow(() -> new RuntimeException("User not found."));
+		Task task = new Task(user, title);
+
 		return taskRepository.save(task);
 	}
 

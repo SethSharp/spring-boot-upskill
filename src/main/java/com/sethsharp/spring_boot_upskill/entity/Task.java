@@ -1,6 +1,7 @@
 package com.sethsharp.spring_boot_upskill.entity;
 
 import jakarta.persistence.*;
+import com.sethsharp.spring_boot_upskill.entity.User;
 
 @Entity
 @Table(name = "tasks")
@@ -20,7 +21,8 @@ public class Task {
 
 	public Task() {}
 
-	public Task(String title) {
+	public Task(User user, String title) {
+		this.user = user;
 		this.title = title;
 		this.completed = false;
 	}
